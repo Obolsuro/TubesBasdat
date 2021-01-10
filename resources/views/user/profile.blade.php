@@ -17,31 +17,38 @@
                         </div>
                         <div class="card-body">
                             <div class="user-profile text-center">
-                                <div class="name">Hizrian, 19</div>
-                                <div class="job">Frontend Developer</div>
-                                <div class="desc">A man who hates loneliness</div>
-                                <div class="social-media">
-                                    <a class="btn btn-info  btn-sm btn-link" href="#">
-                                        <span class="btn-label just-icon"><i class="fas fa-upload"></i> </span>
-                                    </a>
-                                </div>
-                                <div class="view-profile">
-                                    <a href="#" class="btn btn-danger btn-block">Hapus Akun</a>
-                                </div>
+                                <form method="post" action="updateProfile">
+                                    @csrf
+                                    <div class="form-group form-floating-label">
+                                        <input id="inputFloatingLabel" name="uname" type="text" class="form-control input-border-bottom" required>
+                                        <label for="inputFloatingLabel" class="placeholder"><?= $user[0]['uname'] ?></label>
+                                    </div>
+                                    <div class="social-media">
+                                        <button class="btn btn-info  btn-sm btn-link">
+                                            <span class="btn-label just-icon"><i class="fas fa-upload"></i> </span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <form method="post" action="hapusAkun">
+                                    @csrf
+                                    <div class="view-profile">
+                                        <button class="btn btn-danger">Hapus Akun</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="row user-stats text-center">
                                 <div class="col">
-                                    <div class="number">125</div>
-                                    <div class="title">Post</div>
+                                    <div class="number"><?= $tweet ?></div>
+                                    <div class="title">Tweets</div>
                                 </div>
                                 <div class="col">
-                                    <div class="number">25K</div>
+                                    <div class="number"><?= $followers ?></div>
                                     <div class="title">Followers</div>
                                 </div>
                                 <div class="col">
-                                    <div class="number">134</div>
+                                    <div class="number"><?= $following ?></div>
                                     <div class="title">Following</div>
                                 </div>
                             </div>
@@ -49,7 +56,21 @@
                     </div>
                 </div>
             </div>
+            <div class='row'>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="card card-profile text-center">
+                        <form method="get" action="logout">
+                            @csrf
+                            <div class="view-profile">
+                                <button class="btn btn-primary">Logout</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 @endsection

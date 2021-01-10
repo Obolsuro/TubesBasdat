@@ -16,21 +16,22 @@
                         </div>
                     </div>
                     <form method="post" action="{{url('daftar')}}">
+                        @csrf
                         <div class='card-body'>
                             <div class='row'>
                                 <div class="col-md-4 col-lg-4"></div>
                                 <div class="col-md-4 col-lg-4">
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Enter Username">
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email Address</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Re-Password</label>
