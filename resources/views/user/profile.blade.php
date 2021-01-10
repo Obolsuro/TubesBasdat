@@ -26,7 +26,7 @@
                                     <span class="text-primary"><i><?= date("d-m-Y", strtotime($user[0]['bd'])) ?></i></span>
                                     <br>
                                     <div class="social-media">
-                                        <button class="btn btn-info  btn-sm btn-link">
+                                        <button class="btn btn-info  btn-sm btn-link" title="Edit Name">
                                             <span class="btn-label just-icon"><i class="fas fa-upload"></i> </span>
                                         </button>
                                     </div>
