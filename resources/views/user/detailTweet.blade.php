@@ -42,6 +42,7 @@
                     <div class="card full-height">
                         <div class="card-header">
                             <div class="card-title">Reply</div>
+                            <div class="text-primary">Total (<?= count($tweets) ?>)</div>
                         </div>
                         <div class="card-body">
                             <?php foreach ($tweets as $cek) : ?>
